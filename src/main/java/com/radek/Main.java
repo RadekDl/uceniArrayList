@@ -12,9 +12,6 @@ public class Main {
         jmena.add("Ema");
         jmena.add("Karel");
         try {
-
-
-            System.out.println("výpis hledaného slova Ema pomocí continue ");
             int x = -1;
             for (int i = 0; i < jmena.size(); i++) {
                 if (jmena.get(i).equals("Ema")) {
@@ -30,7 +27,13 @@ public class Main {
 
             jmena.set(1, "Alenka");
             System.out.println("výpis po změně jména:\n" + jmena.get(1));
-            jmena.remove("Rade");
+
+            String jmenoKeSmazani = "Rade";
+            if (jmena.remove(jmenoKeSmazani)){
+                System.out.println("jméno: " + jmenoKeSmazani + " smazáno");
+            }else{
+                System.out.println("jméno: " + jmenoKeSmazani + " nenalezeno");
+            }
             System.out.println("výpis po vymazání Radek:");
             for (String seznam : jmena) {
                 System.out.println(seznam);
