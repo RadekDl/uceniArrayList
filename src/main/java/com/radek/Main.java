@@ -42,30 +42,42 @@ public class Main {
 //        } catch (IndexOutOfBoundsException e) {
 //            System.out.println(e.getMessage() + ": chyba počtu prvků");
 //        }
-        ArrayList<Integer>cisla = new ArrayList<>();
-        cisla.add(0, 5);
-        cisla.add(1, 10);
-        cisla.add(2, 15);
 
+//        ArrayList<Integer>cisla = new ArrayList<>();
+//        cisla.add(0, 5);
+//        cisla.add(1, 10);
+//        cisla.add(2, 15);
+//
+//
+//
+//        for (int seznamCisel: cisla){
+//            System.out.println(seznamCisel);
+//        }
+//
+//        cisla.remove(Integer.valueOf(10));
+////        System.out.println("po smazání remove(1)");
+//        System.out.println("po smazání remove(Integer.valueOf(10))");
+//
+//        for (int seznamCisel: cisla){
+//            System.out.println(seznamCisel);
+//        }
 
+        ArrayList<String> jmena = new ArrayList<>();
+        jmena.add("Radek");
+        jmena.add("Ema");
+        jmena.add("Ema");
+        jmena.add("Karel");
+        String jmenoKeHledani = "Ema";
 
-        for (int seznamCisel: cisla){
-            System.out.println(seznamCisel);
+        for (int i = 0; i < jmena.size(); i++) {
+            System.out.println(jmena.get(i) + " " + i);
         }
-
-        cisla.remove(Integer.valueOf(10));
-//        System.out.println("po smazání remove(1)");
-        System.out.println("po smazání remove(Integer.valueOf(10))");
-
-        for (int seznamCisel: cisla){
-            System.out.println(seznamCisel);
+        System.out.println("hledá se: " + jmenoKeHledani);
+        int výsledek = jmena.lastIndexOf(jmenoKeHledani);
+        if (výsledek < 0) {
+            System.out.println(jmenoKeHledani + " nenalezeno");
+        } else {
+            System.out.println(jmenoKeHledani + " nalezeno na indexu: " + výsledek);
         }
-
-
-
-
-
-
-
     }
 }
