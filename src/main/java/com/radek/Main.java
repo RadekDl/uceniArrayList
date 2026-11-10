@@ -62,22 +62,48 @@ public class Main {
 //            System.out.println(seznamCisel);
 //        }
 
+//        ArrayList<String> jmena = new ArrayList<>();
+//        jmena.add("Radek");
+//        jmena.add("Ema");
+//        jmena.add("Ema");
+//        jmena.add("Karel");
+
+//        String jmenoKeHledani = "Ema";
+//
+//        for (int i = 0; i < jmena.size(); i++) {
+//            System.out.println(jmena.get(i) + " " + i);
+//        }
+//        System.out.println("hledá se: " + jmenoKeHledani);
+//        int výsledek = jmena.lastIndexOf(jmenoKeHledani);
+//        if (výsledek < 0) {
+//            System.out.println(jmenoKeHledani + " nenalezeno");
+//        } else {
+//            System.out.println(jmenoKeHledani + " nalezeno na indexu: " + výsledek);
+//        }
+
         ArrayList<String> jmena = new ArrayList<>();
         jmena.add("Radek");
         jmena.add("Ema");
         jmena.add("Ema");
         jmena.add("Karel");
-        String jmenoKeHledani = "Ema";
+
+
+
+        Hledani hledani = new Hledani(jmena);
+        jmena.remove("Radek");
+        hledani.getJmena().add("Eva");
+        String jmeno = "Eva";
 
         for (int i = 0; i < jmena.size(); i++) {
             System.out.println(jmena.get(i) + " " + i);
         }
-        System.out.println("hledá se: " + jmenoKeHledani);
-        int výsledek = jmena.lastIndexOf(jmenoKeHledani);
-        if (výsledek < 0) {
-            System.out.println(jmenoKeHledani + " nenalezeno");
+        System.out.println("hledá se: " + jmeno);
+        int vysledek = hledani.hledejJmeno(jmeno);
+        if (vysledek < 0) {
+            System.out.println(jmeno + " nenalezeno");
         } else {
-            System.out.println(jmenoKeHledani + " nalezeno na indexu: " + výsledek);
+            System.out.println(jmeno + " nalezeno na indexu: " + vysledek);
         }
+
     }
 }
